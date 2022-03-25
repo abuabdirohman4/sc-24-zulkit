@@ -1,6 +1,6 @@
 # Folder template zulkit
-zulkit-html
-zulkit-frontend-live
+templates/zulkit-html/
+templates/zulkit-frontend-live/
 
 # Logs
 logs
