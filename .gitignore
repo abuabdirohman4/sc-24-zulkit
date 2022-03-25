@@ -1,3 +1,7 @@
+# Folder template zulkit
+zulkit-html
+zulkit-frontend-live
+
 # Logs
 logs
 *.log
@@ -102,3 +106,5 @@ dist
 
 # TernJS port file
 .tern-port
+zullkit-html
+zullkit-html
