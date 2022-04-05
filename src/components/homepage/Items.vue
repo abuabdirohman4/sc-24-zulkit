@@ -3,9 +3,9 @@
     import { ref } from 'vue'
 
     const items = ref([
-        { id: 1, title: 'Mobile UI Kit', subTitle:'Mobile UI Kit', image:'items-1.jpg' },
-        { id: 1, title: 'Online Doctor Consultation', subTitle:'Website UI Kit', image:'items-2.jpg' },
-        { id: 1, title: 'Banking Crypto UI Kit', subTitle:'Mobile UI Kit', image:'items-3.jpg' },
+        { id: 1, title: 'Mobile UI Kit', description:'Mobile UI Kit', image:'items-1.jpg' },
+        { id: 1, title: 'Online Doctor Consultation', description:'Website UI Kit', image:'items-2.jpg' },
+        { id: 1, title: 'Banking Crypto UI Kit', description:'Mobile UI Kit', image:'items-3.jpg' },
     ])
 </script>
 
@@ -17,7 +17,7 @@
             v-for="item in items"
             :key="item.id"
             :title="item.title"
-            :subTitle="item.subTitle"
+            :description="item.description"
             :image="item.image"
         />
         <!-- <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">

@@ -3,7 +3,7 @@ import { RouterLink } from "vue-router";
 defineProps({
   title: String,
   image: String,
-  subTitle: String,
+  description: String,
 });
 </script>
 
@@ -30,7 +30,7 @@ defineProps({
           </RouterLink>
         </h1>
         <span class="block text-sm font-light text-gray-500 no-underline"
-          >{{ subTitle }}</span
+          >{{ description }}</span
         >
       </header>
     </div>
