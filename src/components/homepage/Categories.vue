@@ -4,7 +4,7 @@ import CategoriesCard from './../CategoriesCard.vue'
 const categories = ref([
     { id: 1, title: 'Mobile UI kit', count: 731,image: 'categories-1.jpg'},
     { id: 2, title: 'Fonts', count: 371,image: 'categories-2.jpg'},
-    { id: 3, title: 'Icon Set', count: 317,image: 'categories-3.jpg'},
+    { id: 3, title: 'Icon Set', count: 137,image: 'categories-3.jpg'},
     { id: 4, title: 'Website UI kit', count: 4500,image: 'categories-4.jpg'},
 ])
 </script>
