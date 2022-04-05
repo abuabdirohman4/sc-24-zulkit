@@ -106,6 +106,7 @@ dist
 
 # TernJS port file
 .tern-port
+zullkit-html
 
 # VueJS 3
 # Logs
