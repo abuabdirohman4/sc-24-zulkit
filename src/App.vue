@@ -9,5 +9,5 @@ import Navbar from './components/layouts/Navbar.vue'
 </template>
 
 <style>
-@import "@/assets/css/styles.css";
+  @import "@/assets/css/styles.css";
 </style>

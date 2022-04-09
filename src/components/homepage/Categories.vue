@@ -20,10 +20,6 @@ const categories = ref([
                 :count="category.count"
                 :image="category.image"
             />
-            <!-- <CategoryCard title="Mobile UI Kit" :count="731" image="categories-1.jpg"/>
-            <CategoryCard title="Fonts" :count="371" image="categories-2.jpg"/>
-            <CategoryCard title="Icon Set" :count="317" image="categories-3.jpg"/>
-            <CategoryCard title="Website UI Kit" :count="4500" image="categories-4.jpg"/> -->
         </div>
     </div>
 </template>
