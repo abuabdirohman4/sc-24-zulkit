@@ -1,40 +1,40 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+    import { ref, onMounted } from 'vue'
+    import axios from 'axios'
 
-import CategoryCard from './../CategoryCard.vue'
+    import CategoryCard from './../CategoryCard.vue'
 
-const categories = ref([])
+    const categories = ref([])
 
-// function getCategoriesData() {
-    // axios.get('https://zullkit-backend.buildwithangga.id/api/categories').then(function (response) {
-    //     // handle success
-    //     console.log(response.data);
-    // })
-    // const ajax = axios.get('https://zullkit-backend.buildwithangga.id/api/categories')
-    // console.log(ajax)
-// }
+    // function getCategoriesData() {
+        // axios.get('https://zullkit-backend.buildwithangga.id/api/categories').then(function (response) {
+        //     // handle success
+        //     console.log(response.data);
+        // })
+        // const ajax = axios.get('https://zullkit-backend.buildwithangga.id/api/categories')
+        // console.log(ajax)
+    // }
 
-async function getCategoriesData() {
-    try {
-        const response = await axios.get('https://zullkit-backend.buildwithangga.id/api/categories')
-        console.log(response.data)
-        categories.value = response.data.data.data
-    } catch (error) {
-        console.error(error)
+    async function getCategoriesData() {
+        try {
+            const response = await axios.get('https://zullkit-backend.buildwithangga.id/api/categories')
+            // console.log(response.data)
+            categories.value = response.data.data.data
+        } catch (error) {
+            console.error(error)
+        }
     }
-}
 
-// const categories = ref([
-//     { id: 1, title: 'Mobile UI kit', count: 731,image: 'categories-1.jpg'},
-//     { id: 2, title: 'Fonts', count: 371,image: 'categories-2.jpg'},
-//     { id: 3, title: 'Icon Set', count: 137,image: 'categories-3.jpg'},
-//     { id: 4, title: 'Website UI kit', count: 4500,image: 'categories-4.jpg'},
-// ])
+    // const categories = ref([
+    //     { id: 1, title: 'Mobile UI kit', count: 731,image: 'categories-1.jpg'},
+    //     { id: 2, title: 'Fonts', count: 371,image: 'categories-2.jpg'},
+    //     { id: 3, title: 'Icon Set', count: 137,image: 'categories-3.jpg'},
+    //     { id: 4, title: 'Website UI kit', count: 4500,image: 'categories-4.jpg'},
+    // ])
 
-onMounted(() => {
-    getCategoriesData()
-})
+    onMounted(() => {
+        getCategoriesData()
+    })
 
 </script>
 
