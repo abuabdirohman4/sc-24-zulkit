@@ -25,6 +25,7 @@
             <CategoryCard
                 v-for="category in categories"
                 :key="category.id"
+                :id="category.id"
                 :title="category.name"
                 :count="category.products_count"
                 :image="category.thumbnails"
