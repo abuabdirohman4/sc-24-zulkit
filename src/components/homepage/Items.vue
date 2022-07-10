@@ -8,7 +8,7 @@
     async function getItemsData() {
         try {
             const response = await axios.get('https://zullkit-backend.buildwithangga.id/api/products')
-            console.log(response.data)
+            // console.log(response.data)
             items.value = response.data.data.data
         } catch (error) {
             console.log(error)
