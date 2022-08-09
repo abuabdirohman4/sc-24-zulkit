@@ -13,11 +13,7 @@ defineProps({
     <div class="overflow-hidden border border-gray-200 rounded-xl">
       <RouterLink :to="'/product/' + id">
         <div class="m-4 overflow-hidden rounded-xl">
-          <img
-            alt="Placeholder"
-            class="block w-full h-auto"
-            :src="image"
-          />
+          <img alt="Placeholder" class="block w-full h-auto" :src="image" />
         </div>
       </RouterLink>
 
@@ -30,9 +26,9 @@ defineProps({
             {{ title }}
           </RouterLink>
         </h1>
-        <span class="block text-sm font-light text-gray-500 no-underline"
-          >{{ description }}</span
-        >
+        <span class="block text-sm font-light text-gray-500 no-underline">{{
+          description
+        }}</span>
       </header>
     </div>
   </div>

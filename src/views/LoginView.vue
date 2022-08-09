@@ -1,5 +1,5 @@
 <script setup>
-import LoginForm from '@/components/authentication/LoginForm.vue'
+import LoginForm from "@/components/authentication/LoginForm.vue";
 </script>
 
 <template>
@@ -11,10 +11,14 @@ import LoginForm from '@/components/authentication/LoginForm.vue'
         >
           <div class="w-full p-5 mx-auto sm:max-w-md">
             <h2 class="mb-20 text-5xl font-bold text-center">Welcome Back</h2>
-            <LoginForm/>
+            <LoginForm />
           </div>
           <div class="w-full mx-auto mt-20 sm:max-w-2xl">
-            <img src="@/assets/img/brand-logo.svg" alt="" class="w-full px-10 md:px-0" />
+            <img
+              src="@/assets/img/brand-logo.svg"
+              alt=""
+              class="w-full px-10 md:px-0"
+            />
           </div>
         </div>
       </div>

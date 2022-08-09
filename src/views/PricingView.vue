@@ -9,10 +9,7 @@ async function checkout(price) {
       "https://zullkit-backend.buildwithangga.id/api/checkout",
       {
         headers: {
-          Authorization:
-            localStorage.getItem("token_type") +
-            " " +
-            localStorage.getItem("access_token"),
+          Authorization: "Bearer 1|beaxTjDu2h8NPHjificMw7KyLC6Z92tqjQweeFDP",
         },
       },
       {
