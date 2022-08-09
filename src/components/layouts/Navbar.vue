@@ -10,8 +10,8 @@ import { useUserStore } from "@/stores/user";
 
 const userStore = useUserStore();
 const isLoggedIn = computed(() => userStore.isLoggedIn);
+const user = computed(() => userStore.user);
 // const getUser = computed(() => userStore.getUser);
-// const user = computed(() => userStore.user);
 
 onMounted(() => {
   userStore.fetchUser();
@@ -27,7 +27,7 @@ onMounted(() => {
       class="container flex flex-wrap items-center justify-between mx-auto my-2"
     >
       <Logo />
-      <UserInfo v-if="isLoggedIn" />
+      <UserInfo v-if="isLoggedIn" :user="user.data" />
       <AuthButton v-else />
       <NavigationLinks />
     </div>
