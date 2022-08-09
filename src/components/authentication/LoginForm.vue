@@ -1,8 +1,10 @@
 <!-- Composition API -->
 <script setup>
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import axios from "axios";
+
+const router = useRouter();
 
 const form = ref({
   email: "",
@@ -10,17 +12,38 @@ const form = ref({
 });
 
 async function login() {
-    try {
-        const response = await axios.post("https://zullkit-backend.buildwithangga.id/api/login", {
-            email : form.value.email,
-            password : form.value.password
-        })
-        console.log(response)
-        localStorage.setItem('access_token', response.data.data.access_token)
-        localStorage.setItem('token_type', response.data.data.access_token)
-    } catch (error) {
-        console.log(error)
-    }
+  try {
+    const response = await axios.post(
+      "https://zullkit-backend.buildwithangga.id/api/login",
+      {
+        email: form.value.email,
+        password: form.value.password,
+      }
+    );
+    console.log(response);
+    localStorage.setItem("access_token", response.data.data.access_token);
+    localStorage.setItem("token_type", response.data.data.token_type);
+
+    router.push("/");
+    console.log("ini login");
+
+    console.log("hallo ini fetch user");
+    const { data } = await axios.get(
+      "https://zullkit-backend.buildwithangga.id/api/user",
+      {
+        header: {
+          Authorization:
+            localStorage.getItem("token_type") +
+            "  " +
+            localStorage.getItem("access_token"),
+        },
+      }
+    );
+    console.log("ini data", data);
+    this.user = data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 </script>
 
