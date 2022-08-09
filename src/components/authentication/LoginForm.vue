@@ -3,7 +3,9 @@
 import { ref } from "vue";
 import { RouterLink, useRouter } from "vue-router";
 import axios from "axios";
+import { useUserStore } from "../../stores/user";
 
+const userStore = useUserStore();
 const router = useRouter();
 
 const form = ref({
@@ -24,22 +26,8 @@ async function login() {
     localStorage.setItem("access_token", response.data.data.access_token);
     localStorage.setItem("token_type", response.data.data.token_type);
 
+    userStore.fetchUser();
     router.push("/");
-    console.log("ini login");
-
-    console.log("hallo ini fetch user");
-    const { data } = await axios.get(
-      "https://zullkit-backend.buildwithangga.id/api/user",
-      {
-        header: {
-          Authorization:
-            localStorage.getItem("token_type") +
-            "  " +
-            localStorage.getItem("access_token"),
-        },
-      }
-    );
-    console.log("ini data", data);
     this.user = data;
   } catch (error) {
     console.log(error);
