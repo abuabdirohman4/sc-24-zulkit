@@ -1,6 +1,31 @@
 <script setup>
-    import FeatureLists from '../components/authentication/FeatureLists.vue';
-    import { RouterLink } from 'vue-router';
+import FeatureLists from "../components/authentication/FeatureLists.vue";
+import { RouterLink } from "vue-router";
+import axios from "axios";
+
+async function checkout(price) {
+  try {
+    const response = axios.post(
+      "https://zullkit-backend.buildwithangga.id/api/checkout",
+      {
+        headers: {
+          Authorization:
+            localStorage.getItem("token_type") +
+            " " +
+            localStorage.getItem("access_token"),
+        },
+      },
+      {
+        payment_total: price,
+        payment_status: "PENDING",
+      }
+    );
+
+    window.location.href = response.data.data.payment_url;
+  } catch (error) {
+    console.log(error);
+  }
+}
 </script>
 
 <template>
@@ -68,12 +93,13 @@
                     Pre-built design screen
                   </li>
                 </ul>
-                <RouterLink
-                  to="/success"
+                <!-- <RouterLink -->
+                <button
+                  @click="checkout(2000)"
                   class="inline-flex items-center justify-center w-full px-8 py-3 text-base font-medium text-black bg-gray-200 border border-transparent rounded-full hover:bg-gray-300 md:py-2 md:text-md md:px-10 hover:shadow"
                 >
                   Checkout Now
-                </RouterLink>
+                </button>
               </div>
             </div>
             <div>
@@ -158,19 +184,19 @@
                     Unlock cloning app
                   </li>
                 </ul>
-                <RouterLink
-                  to="/success"
+                <button
+                  @click="checkout(9000)"
                   class="inline-flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full hover:bg-indigo-700 md:py-2 md:text-md md:px-10 hover:shadow"
                 >
                   Checkout Now
-                </RouterLink>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div class="w-full p-5 mx-auto mb-10 md:max-w-7xl">
           <div class="grid grid-cols-1 gap-4 mx-auto md:grid-cols-3 md:mx-0">
-            <FeatureLists/>
+            <FeatureLists />
           </div>
         </div>
       </div>
