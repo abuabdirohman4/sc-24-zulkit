@@ -15,7 +15,7 @@ async function login() {
             email : form.value.email,
             password : form.value.password
         })
-        // console.log(response)
+        console.log(response)
         localStorage.setItem('access_token', response.data.data.access_token)
         localStorage.setItem('token_type', response.data.data.access_token)
     } catch (error) {
