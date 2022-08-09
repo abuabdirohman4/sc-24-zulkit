@@ -28,7 +28,6 @@ async function login() {
 
     userStore.fetchUser();
     router.push("/");
-    this.user = data;
   } catch (error) {
     console.log(error);
   }
