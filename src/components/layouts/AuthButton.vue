@@ -6,13 +6,13 @@ import { RouterLink } from "vue-router";
   <div class="md:order-2">
     <RouterLink
       to="/login"
-      class="px-8 py-3 mt-2 mr-2 text-base font-medium text-black bg-gray-200 border border-transparent rounded-full hover:bg-gray-300 md:py-2 md:text-sm md:px-8 hover:shadow"
+      class="mt-2 mr-2 rounded-full border border-transparent bg-gray-200 px-8 py-3 text-base font-medium text-black hover:bg-gray-300 hover:shadow md:py-2 md:px-8 md:text-sm"
     >
       Sign In
     </RouterLink>
     <RouterLink
       to="/register"
-      class="px-8 py-3 text-base font-medium text-white border border-transparent rounded-full bg-navy hover:bg-navy md:py-2 md:text-sm md:px-8 hover:shadow"
+      class="rounded-full border border-transparent bg-gray-200 px-8 py-3 text-base font-medium text-black hover:bg-gray-300 hover:shadow md:py-2 md:px-8 md:text-sm"
     >
       Sign Up
     </RouterLink>
