@@ -19,7 +19,7 @@ export const useUserStore = defineStore({
             headers: {
               Authorization:
                 localStorage.getItem("token_type") +
-                "  " +
+                " " +
                 localStorage.getItem("access_token"),
             },
           }
