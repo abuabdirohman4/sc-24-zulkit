@@ -1,10 +1,22 @@
 <script setup>
-import { reactive } from "vue";
+import { useRouter } from "vue-router";
+import { useUserStore } from "../../stores/user";
 
+const userStore = useUserStore();
+const router = useRouter();
 const props = defineProps({
   user: Object,
 });
 
+async function logout() {
+  try {
+    localStorage.clear();
+    userStore.logout();
+    router.push("/");
+  } catch (error) {
+    console.log(error);
+  }
+}
 </script>
 
 <template>
@@ -35,26 +47,28 @@ const props = defineProps({
           >
         </div>
         <ul class="py-1" aria-labelledby="dropdown">
-          <li>
+          <!-- <li>
             <a
               href="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
               >Subscriptions</a
             >
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a
               href="#"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
               >Settings</a
             >
-          </li>
+          </li> -->
           <li>
-            <a
+            <button
               href="#"
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-              >Sign out</a
+              @click.prevent="logout"
+              class="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
             >
+              Sign out
+            </button>
           </li>
         </ul>
       </div>

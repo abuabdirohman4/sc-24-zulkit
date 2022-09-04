@@ -29,5 +29,8 @@ export const useUserStore = defineStore({
         this.user = false;
       }
     },
+    async logout() {
+      this.user = false;
+    },
   },
 });

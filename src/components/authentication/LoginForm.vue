@@ -9,8 +9,8 @@ const userStore = useUserStore();
 const router = useRouter();
 
 const form = ref({
-  email: "",
-  password: "",
+  email: "admin@email.co",
+  password: "password",
 });
 
 async function login() {
@@ -22,7 +22,6 @@ async function login() {
         password: form.value.password,
       }
     );
-    console.log(response);
     localStorage.setItem("access_token", response.data.data.access_token);
     localStorage.setItem("token_type", response.data.data.token_type);
 
