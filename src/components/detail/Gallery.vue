@@ -12,7 +12,7 @@ function changeImage(image) {
   console.log('thumbnail', thumbnail)
   console.log('this.thumbnail', this.thumbnail)
   console.log('image', image)
-  props.defaultImage = image;
+  this.thumbnail = image;
 }
 </script>
 
