@@ -9,7 +9,10 @@ const props = defineProps({
 const thumbnail = ref(props.defaultImage);
 
 function changeImage(image) {
-  this.thumbnail = image;
+  console.log('thumbnail', thumbnail)
+  console.log('this.thumbnail', this.thumbnail)
+  console.log('image', image)
+  props.defaultImage = image;
 }
 </script>
 
